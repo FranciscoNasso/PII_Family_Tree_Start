@@ -6,6 +6,7 @@ namespace Library
 {
     public class Node
     {
+
         private int number;
 
         private List<Node> children = new List<Node>();
@@ -33,6 +34,21 @@ namespace Library
         {
             this.children.Add(n);
         }
+
+        public int EdadTotal()
+        {
+            int total = Number;
+            foreach (Node nodes in Children)
+            {
+                total += nodes.Number;
+            }
+            return total;
         
+        }
+
+        public void Accept(Visitador1 visitor)
+        {
+            visitor.VisitNode(this);
+        }
     }
 }
