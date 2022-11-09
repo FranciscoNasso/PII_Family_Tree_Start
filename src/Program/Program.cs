@@ -49,8 +49,8 @@ namespace Program
             // Parte 3
 
             Visitador v1 = new Visitador1();
-            v1.Operaciones(p7);
-            v1.Operaciones(n1);
+            v1.Operaciones(p8);
+            v1.Operaciones(n2);
         }
     }
 }

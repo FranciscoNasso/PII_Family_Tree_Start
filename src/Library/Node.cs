@@ -4,7 +4,7 @@ using System;
 
 namespace Library
 {
-    public class Node
+    public class Node : Operaciones
     {
 
         private int number;
@@ -46,9 +46,9 @@ namespace Library
         
         }
 
-        public void Accept(Visitador1 visitor)
+        public void Accept(Visitador1 visitador)
         {
-            visitor.VisitNode(this);
+            visitador.VisitNode(this);
         }
     }
 }

@@ -4,7 +4,7 @@ using System;
 
 namespace Library
 {
-    public class Persona
+    public class Persona : Operaciones
     {
         private string nombre;
         private int edad;
@@ -62,9 +62,9 @@ namespace Library
             }
             return total;
         }
-        public void Accept(Visitador1 visitor)
+        public void Accept(Visitador1 visitador)
         {
-            visitor.VisitPersona(this);
+            visitador.VisitPersona(this);
         }
     }
 }
