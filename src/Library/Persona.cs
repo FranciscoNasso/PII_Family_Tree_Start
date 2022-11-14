@@ -4,7 +4,7 @@ using System;
 
 namespace Library
 {
-    public class Persona : Operaciones
+    public class Persona : Operaciones , OperacionesUltimo
     {
         private string nombre;
         private int edad;
@@ -62,7 +62,45 @@ namespace Library
             }
             return total;
         }
-        public void Accept(Visitador1 visitador)
+        public void Accept(VisitadorEdad visitador)
+        {
+            visitador.VisitPersona(this);
+        }
+
+        public string MasGrande()
+        {
+            int mayor = 0;
+            string nombremayor = "";
+            foreach (Persona personas in Children)
+            {
+                if (personas.Edad > mayor)
+                {
+                    mayor = personas.Edad;
+                    nombremayor = personas.Nombre;
+                }
+            }
+            return nombremayor;
+        }
+        public void Accept(VisitadorHijoMasGrande visitador)
+        {
+            visitador.VisitPersona(this);
+        }
+
+        public string MasLargo()
+        {
+            int largo = Nombre.Length;
+            string nombrelargo = Nombre;
+            foreach (Persona personas in Children)
+            {
+                if (personas.Nombre.Length > largo)
+                {
+                    largo = personas.Nombre.Length;
+                    nombrelargo = personas.Nombre;
+                }
+            }
+            return nombrelargo;
+        }
+        public void Accept(VisitadorNombreMasLargo visitador)
         {
             visitador.VisitPersona(this);
         }

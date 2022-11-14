@@ -46,7 +46,24 @@ namespace Library
         
         }
 
-        public void Accept(Visitador1 visitador)
+        public void Accept(VisitadorEdad visitador)
+        {
+            visitador.VisitNode(this);
+        }
+
+        public int MasGrande()
+        {
+            int mayor = 0;
+            foreach (Node node in Children)
+            {
+                if (node.number > mayor)
+                {
+                    mayor = node.number;
+                }
+            }
+            return mayor;
+        }
+        public void Accept(VisitadorHijoMasGrande visitador)
         {
             visitador.VisitNode(this);
         }

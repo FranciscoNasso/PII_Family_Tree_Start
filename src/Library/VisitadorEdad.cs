@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Library
 {
-    public class Visitador1 : Visitador
+    public class VisitadorEdad : Visitador
     {
         public void Operaciones(Operaciones operaciones)
         {

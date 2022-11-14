@@ -48,9 +48,18 @@ namespace Program
 
             // Parte 3
 
-            Visitador v1 = new Visitador1();
+            VisitadorEdad v1 = new VisitadorEdad();
             v1.Operaciones(p8);
             v1.Operaciones(n2);
+
+            // Parte 4
+
+            VisitadorHijoMasGrande v2 = new VisitadorHijoMasGrande();
+            v2.Operaciones(p5);
+            v2.Operaciones(n1);
+
+            VisitadorNombreMasLargo v3 = new VisitadorNombreMasLargo();
+            v3.Operaciones(p5);
         }
     }
 }
